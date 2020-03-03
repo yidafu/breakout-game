@@ -1,2 +1,2 @@
-# pinball-game
-Pinball game TypeScript Implement.
+# Breakout-game
+Breakout game TypeScript Implement.

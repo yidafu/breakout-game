@@ -1,24 +1,24 @@
 {
-  "name": "pinball-game",
+  "name": "breakout-game",
   "version": "0.0.1",
-  "description": "Pinball game TypeScript Implement.",
+  "description": "Breakout game TypeScript Implement.",
   "main": "src/index.js",
   "scripts": {
     "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yidafu/pinball-game.git"
+    "url": "git+https://github.com/yidafu/breakout-game.git"
   },
   "keywords": [
-    "pinball"
+    "breakout"
   ],
   "author": "yidafu (dov yih)",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/yidafu/pinball-game/issues"
+    "url": "https://github.com/yidafu/breakout-game/issues"
   },
-  "homepage": "https://github.com/yidafu/pinball-game#readme",
+  "homepage": "https://github.com/yidafu/breakout-game#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "2.7.0",
     "@typescript-eslint/parser": "2.7.0",
