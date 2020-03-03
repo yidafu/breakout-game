@@ -4,7 +4,8 @@
   "description": "Breakout game TypeScript Implement.",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -43,7 +44,8 @@
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.2",
     "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
     "cssnano": "^4.1.10",
