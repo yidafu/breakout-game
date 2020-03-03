@@ -1,39 +1,31 @@
 /* --------------------------------------------------------------------------*
  * Description:                                                              *
  *                                                                           *
- * File Created: Friday, 28th February 2020 10:26 pm                         *
+ * File Created: Tuesday, 3rd March 2020 11:54 am                            *
  * Author: yidafu(dov-yih) (me@yidafu.dev)                                   *
  *                                                                           *
- * Last Modified: Tuesday, 3rd March 2020 11:31 am                           *
+ * Last Modified: Tuesday, 3rd March 2020 11:54 am                           *
  * Modified By: yidafu(dov-yih) (me@yidafu.dev>)                             *
  *                                                                           *
  * Copyright 2019 - 2020 Mozilla Public License 2.0                          *
  *-------------------------------------------------------------------------- */
-import { getStore } from './store/index';
-import './style.css';
-import { STAGE_INIT } from './store/stage/types';
 
-export interface GameOption{
-  container: HTMLElement | string;
-  renderer?: 'html' | 'canvas';
-}
+import { BallState, BallAction, BALL_MOVING } from './types';
 
-class BreakoutGame {
-  public static store = getStore();
+const initialState: BallState = {
+  currPos: { x: 0, y: 0 },
+};
 
-  public static run(options: GameOption): void {
-    console.log(options);
-    this.store.dispatch({
-      type: STAGE_INIT,
-    });
+export function ballReducer(state = initialState, action: BallAction): BallState {
+  // eslint-disable-next-line default-case
+  switch (action.type) {
+    case BALL_MOVING: {
+      return {
+        ...state,
+        currPos: action.payload,
+      };
+    }
   }
 
-  public static initScene(): void {
-    console.log('init scene');
-  }
+  return state;
 }
-
-
-BreakoutGame.run({
-  container: '#app',
-});
