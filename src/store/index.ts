@@ -21,23 +21,23 @@ const rootReducer = combineReducers({
 
 export type RootState = ReturnType<typeof rootReducer>
 
+// @ts-ignore
+// eslint-disable-next-line no-underscore-dangle
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+// const middleware: void[] = [];
+
+const store = createStore(
+  rootReducer,
+  composeEnhancers(
+  //  applyMiddleware( ...middleware)
+  ),
+);
+
+// store.subscribe(() => {
+//   console.log('[subscribe][getState]', store.getState());
+// });
+
 export function getStore(): Store {
-  // @ts-ignore
-  // eslint-disable-next-line no-underscore-dangle
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-  // const middleware: void[] = [];
-
-  const store = createStore(
-    rootReducer,
-    composeEnhancers(
-    //  applyMiddleware( ...middleware)
-    ),
-  );
-
-  store.subscribe(() => {
-    console.log('[subscribe][getState]', store.getState());
-  });
-
   return store;
 }

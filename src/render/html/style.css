@@ -1,0 +1,8 @@
+@import './variable.css';
+
+.stick {
+  position: absolute;
+  width: 50px;
+  height: 10px;
+  background-color: #a9a9a9;
+}

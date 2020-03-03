@@ -12,6 +12,7 @@
 import { getStore } from './store/index';
 import './style.css';
 import { STAGE_INIT } from './store/stage/types';
+import { HTMLRender } from './render/html';
 
 export interface GameOption{
   container: HTMLElement | string;
@@ -23,6 +24,24 @@ class BreakoutGame {
 
   public static run(options: GameOption): void {
     console.log(options);
+
+    let container: HTMLElement;
+    if (typeof options.container === 'string') {
+      const element = document.querySelector(options.container);
+      if (element === null) {
+        throw new Error('options.container doesn\'t exsit!');
+      }
+      container = element as HTMLElement;
+    } else {
+      container = options.container;
+    }
+
+    if (options.renderer === 'canvas') {
+      // noop
+    } else {
+      const render = new HTMLRender();
+      render.init(container);
+    }
     this.store.dispatch({
       type: STAGE_INIT,
     });
